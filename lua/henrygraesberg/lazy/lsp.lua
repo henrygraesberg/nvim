@@ -23,6 +23,7 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "j-hui/fidget.nvim",
+    "mlaursen/vim-react-snippets",
   },
 
   config = function()
@@ -138,5 +139,11 @@ return {
         prefix = "",
       },
     })
+
+    require("vim-react-snippets").lazy_load()
+
+    -- if you do not want to wrap all props in `Readonly<T>`
+    local config = require("vim-react-snippets.config")
+    config.readonly_props = false
   end
 }
